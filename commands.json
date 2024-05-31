@@ -1,0 +1,38 @@
+{
+  "DPO70604C": {
+    "set_attenuation": "ACQuire:MODe AVErage",
+    "set_acquisition": "CH1:PROBEFunc:EXTatten 10",
+    "set_measurement": "MEASUrement:MEAS1:STATE ON;:MEASUrement:MEAS2:STATE ON;:MEASUrement:MEAS3:STATE ON",
+    "set_positive": "TRIGger:A:EDGE:SLOPe RISe;:MEASUrement:MEAS1:TYPe MINImum;:MEASUrement:MEAS2:TYPe RISe;:MEASUrement:MEAS3:TYPe MAXimum",
+    "set_negative": "TRIGger:A:EDGE:SLOPe FALL;:MEASUrement:MEAS1:TYPe MAXimum;:MEASUrement:MEAS2:TYPe FALL;:MEASUrement:MEAS3:TYPe MINImum",
+    "set_cursor": "CURSor:STATE ON;:CURSor:FUNCtion WAVEform",
+    "set_voltage": "CH1:SCALe E-03",
+    "get_measure1": "MEASUrement:MEAS1:VALue?",
+    "get_measure2": "MEASUrement:MEAS2:VALue?",
+    "get_measure3": "MEASUrement:MEAS3:VALue?",
+    "axis_commands": {
+      "header": "HEADer 0",
+      "source": "DATA:SOUrce CH1",
+      "encoding": "DATA:ENCdg SRIbinary",
+      "width": "DATa:WIDTH 1",
+      "start": "DATA: START 1",
+      "stop": "DATA:STOP 1E10",
+      "record": "WFMOutpre:NR_Pt?",
+      "stop record": "DATA:STOP 0",
+      "xinc": "WFMOutpre:XINcr?",
+      "xzero": "WFMOutpre:XZEro?",
+      "pt_off": "WFMOutpre:PT_Off?",
+      "ymult": "WFMOutpre:YMUlt?",
+      "yzero": "WFMOutpre:YZEro?",
+      "yoff": "WFMOutpre:YOFf?",
+      "curve": "curve?"
+    }
+  },
+  "TDS6604": {
+    "derived": "DPO70604C",
+    "set_cursor": "CURSor:STATE ON;:CURSor:FUNCtion SPLit"
+  },
+  "TDS7704B": {
+    "derived": "TDS6604"
+  }
+}
