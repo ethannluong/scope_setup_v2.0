@@ -9,6 +9,12 @@ from pathlib import Path
 
 _RM = pyvisa.ResourceManager('@py')
 
+resource_lst = _RM.list_resources()
+
+if len(resource_lst) < 1:
+    _RM = pyvisa.ResourceManager()
+    resource_lst = _RM.list_resources()
+
 
 class CommandMap(TypedDict, total=True):
     set_attenuation: str
